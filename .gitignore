@@ -17,4 +17,4 @@
 *.vim
 /vendor
 !vendor/vendor.json
-test
+
