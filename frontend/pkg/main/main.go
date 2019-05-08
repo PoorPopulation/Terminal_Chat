@@ -40,9 +40,12 @@ func connHandler(c net.Conn) {
 
 func publish(s string, c net.Conn)  {
 	for _, conn := range conns {
+		fmt.Println("111")
 		if conn != c {
 			fmt.Print(s)
-			conn.Write([]byte(s))
+			conn.Write([]byte(s + "\n"))
+		} else {
+			fmt.Println("aaa")
 		}
 	}
 }
