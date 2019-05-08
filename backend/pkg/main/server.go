@@ -12,6 +12,8 @@ func connHandler(c net.Conn) {
 	if c == nil {
 		return
 	}
+
+	fmt.Println("client remoteAddress: ", c.RemoteAddr().String())
 	conns = append(conns, c)
 	buf := make([]byte, 4096)
 	for {
@@ -25,9 +27,6 @@ func connHandler(c net.Conn) {
 		switch inputs[0] {
 		case "ping":
 			c.Write([]byte("pong\n"))
-		case "echo":
-			echoStr := strings.Join(inputs[1:], " ") + "\n"
-			c.Write([]byte(echoStr))
 		case "quit":
 			c.Close()
 			break
@@ -38,14 +37,10 @@ func connHandler(c net.Conn) {
 	fmt.Printf("Connection from %v closed. \n", c.RemoteAddr())
 }
 
-func publish(s string, c net.Conn)  {
+func publish(s string, client net.Conn)  {
 	for _, conn := range conns {
-		fmt.Println("111")
-		if conn != c {
-			fmt.Print(s)
+		if conn != nil && conn != client {
 			conn.Write([]byte(s + "\n"))
-		} else {
-			fmt.Println("aaa")
 		}
 	}
 }
