@@ -1,0 +1,6 @@
+hash: f06f5c9b23fbcd350dfdfb6e394a5659246004bf6a0e46bb47b246c660216d16
+updated: 2019-05-09T11:41:53.971096+08:00
+imports:
+- name: github.com/gbin/goncurses
+  version: 34d9399fcea5d7d8dc15c91de9994003c218bb45
+testImports: []

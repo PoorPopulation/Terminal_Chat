@@ -1,0 +1,5 @@
+package: .
+import:
+- package: github.com/gbin/goncurses
+ignore:
+- sub
