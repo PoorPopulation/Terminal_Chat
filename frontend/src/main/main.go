@@ -1,16 +1,18 @@
-
 package main
 
 import (
-	"github.com/gbin/goncurses"
+	"fmt"
 	"log"
 	"sub"
+
+	"github.com/gbin/goncurses"
 )
 
 func main() {
 	// Initialize goncurses. It's essential End() is called to ensure the
 	// terminal isn't altered after the program ends
-	sub.Mysub=12;
+	sub.Mysub = 12
+	fmt.Println("here")
 	stdscr, err := goncurses.Init()
 	if err != nil {
 		log.Fatal("init", err)
