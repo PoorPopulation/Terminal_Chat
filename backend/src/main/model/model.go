@@ -1,29 +1,25 @@
 package model
 
-import "time"
+import (
+	"github.com/jinzhu/gorm"
+)
 
 type User struct {
-	ID int64
-	Name string
-	Nick string
+	gorm.Model
+	Name     string
+	Nick     string
 	Password string
-	CreateTime time.Time
-	ModifyTime time.Time
 }
 
 type LoginLog struct {
-	ID int64
-	UserID int64
+	gorm.Model
+	UserID  uint
 	LoginIp string
-	CreateTime time.Time
-	ModifyTime time.Time
 }
 
 type Message struct {
-	ID int64
-	Content string
-	UserId int64
+	gorm.Model
+	Content  string
+	UserId   uint
 	UserName string
-	CreateTime time.Time
-	ModifyTime time.Time
 }
