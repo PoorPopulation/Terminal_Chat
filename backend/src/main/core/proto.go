@@ -1,38 +1,38 @@
 package core
 
-type ppProto struct {
-	code   []byte
-	length int
-	ppType byte
-	token  string
+type PpProto struct {
+	Code   []byte
+	Length uint32
+	PpType byte
+	Token  string
 	UUID   string
-	body   string
+	Body   string
 }
 
-func (o *ppProto) writeCode(code []byte) *ppProto {
-	o.code = code
-	return o
-}
-
-func (o *ppProto) writeLength(length int) *ppProto {
-	o.length = length
-	return o
-}
-func (o *ppProto) writePpType(ppType byte) *ppProto {
-	o.ppType = ppType
-	return o
-}
-func (o *ppProto) writeToken(token string) *ppProto {
-	o.token = token
+func (o *PpProto) WriteCode(Code []byte) *PpProto {
+	o.Code = Code
 	return o
 }
 
-func (o *ppProto) writeUUID(UUID string) *ppProto {
+func (o *PpProto) WriteLength(Length uint32) *PpProto {
+	o.Length = Length
+	return o
+}
+func (o *PpProto) WritePpType(PpType byte) *PpProto {
+	o.PpType = PpType
+	return o
+}
+func (o *PpProto) WriteToken(Token string) *PpProto {
+	o.Token = Token
+	return o
+}
+
+func (o *PpProto) WriteUUID(UUID string) *PpProto {
 	o.UUID = UUID
 	return o
 }
 
-func (o *ppProto) writeBody(body string) *ppProto {
-	o.body = body
+func (o *PpProto) WriteBody(Body string) *PpProto {
+	o.Body = Body
 	return o
 }
